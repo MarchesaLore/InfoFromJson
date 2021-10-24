@@ -1,4 +1,5 @@
 $(document).ready(function() {  
+  /* I am using the same card html  for all the different types so I write it once and use it for all */
     var cardTemplate='';
     cardTemplate += '<div class="portfolio_new_item_withhover">';
     cardTemplate += '<div class="portfolio_item_img_withhover"><a href="@cardurl"><img src="@cardimg" alt="@cardimgdesc"></a></div>';
@@ -10,22 +11,23 @@ $(document).ready(function() {
 
     $.getJSON("./json/categories.json", 
         function (data) {
-          var categories='';
-          var categoriesTitle='';
+          var categoriesHTML='';
+          var categoriesTitleHTML='';
         $.each(data, function (key, value) {
-          categories += cardTemplate;
-          categories = categories.replaceAll('@cardurl', ''+ value.url);
-          categories = categories.replaceAll('@cardimg', ''+ value.img);
-          categories = categories.replaceAll('@cardTitle', ''+ value.title);
-          categories = categories.replaceAll('@cardimgdesc', ''+ value.imgdesc);
+          categoriesHTML += cardTemplate;
+          categoriesHTML = categoriesHTML.replaceAll('@cardurl', ''+ value.url);
+          categoriesHTML = categoriesHTML.replaceAll('@cardimg', ''+ value.img);
+          categoriesHTML = categoriesHTML.replaceAll('@cardTitle', ''+ value.title);
+          categoriesHTML = categoriesHTML.replaceAll('@cardimgdesc', ''+ value.imgdesc);
 
-          categoriesTitle +=titleTemplate;
-          categoriesTitle = categoriesTitle.replaceAll('@categorieTitle', ''+ value.title);
-          categoriesTitle = categoriesTitle.replaceAll('@categoryDiv', 'div'+ value.id);
+          /* I am also creating the titles + div for the 4 categories details here that I am going to use below*/
+          categoriesTitleHTML +=titleTemplate;
+          categoriesTitleHTML = categoriesTitleHTML.replaceAll('@categorieTitle', ''+ value.title);
+          categoriesTitleHTML = categoriesTitleHTML.replaceAll('@categoryDiv', 'div'+ value.id);
 
         });
-        $('#categories').append(categories);
-        $('#categories-desc').append(categoriesTitle);
+        $('#categories').append(categoriesHTML);
+        $('#categories-desc').append(categoriesTitleHTML);
     });
 
 
@@ -39,9 +41,9 @@ $(document).ready(function() {
           outcomeHTML = outcomeHTML.replaceAll('@cardTitle', ''+ value.title);
           outcomeHTML = outcomeHTML.replaceAll('@cardimgdesc', ''+ value.imgdesc);
         });
+        /* div1 to div4 has been created in the previous foreach */
         $('#div1').append(outcomeHTML);
     });
-
     $.getJSON("./json/computer.json", 
       function (data) {
         var outcomeHTML='';
@@ -54,7 +56,6 @@ $(document).ready(function() {
       });
       $('#div2').append(outcomeHTML);
     });
-
     $.getJSON("./json/stationery.json", 
       function (data) {
         var outcomeHTML='';
@@ -67,7 +68,6 @@ $(document).ready(function() {
       });
       $('#div3').append(outcomeHTML);
     });
-
     $.getJSON("./json/home.json", 
       function (data) {
         var outcomeHTML='';

@@ -13,6 +13,7 @@ img{
 }
 .art-description{
     display: grid;
+    /*I want the description to be 2 times the size of the image on desktop*/
     grid-template-columns: 2fr 1fr;
 }
 .portfolio_new{
@@ -68,9 +69,15 @@ img{
     left: 0;
     background: rgba(0,0,0,.45);
 }
-@media (max-width: 800px) {
+@media (max-width: 800px) {    
+    .art-description{
+        display: flex;
+        /*when on mobile I want the image to be before the description*/
+        flex-direction: column-reverse;
+    }
     .portfolio_new{
         display: grid;
+        /*I want 2 columns when on smaller screens*/
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
         margin: auto;
