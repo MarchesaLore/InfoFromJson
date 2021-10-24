@@ -1,0 +1,31 @@
+ [
+      {
+        "id": 1,
+        "title": "CLOTHING",
+        "img": "/img/work-86571275-essential-t-shirt.jpg",
+        "imgdesc":"tshirt classic with collage",
+        "url": "#CLOTHING"
+      },
+      {
+        "id": 2,
+        "title": "COMPUTER & PHONE CASES",
+        "img": "/img/work-86571275-laptop-sleeve.jpg",
+        "imgdesc":"mouse pad with collage",
+        "url": "#COMPUTER"
+      },
+      {
+        "id": 3,
+        "title": "STATIONERY",
+        "img": "/img/work-3.jpg",
+        "imgdesc":"glossy sticker with collage",
+        "url": "#STATIONERY"
+      },
+      {
+        "id": 4,
+        "title": "HOME & LIVING",
+        "img": "/img/work-86571275-floor-pillow.jpg",
+        "imgdesc":"mask with collage",
+        "url": "#HOME"
+      }
+]
+  
