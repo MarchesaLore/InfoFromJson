@@ -11,8 +11,7 @@ Categoeries types and then all the categories details are generated getting the 
     var cardTemplate='';
     cardTemplate += '<div class="portfolio_new_item_withhover">';
     cardTemplate += '<div class="portfolio_item_img_withhover"><a href="@cardurl"><img src="@cardimg" alt="@cardimgdesc"></a></div>';
-    cardTemplate += '<a href="@cardurl" class="portfolio_new_item_title_hover"><span span class="highlight_cont">@cardTitle</span></a>';
-    cardTemplate += '<a href="@cardurl" class="portfolio_item_title_hover"></a>';
+    cardTemplate += '<a href="@cardurl" class="portfolio_new_item_title_hover"><span>@cardTitle</span></a>';
     cardTemplate += '</div>';
     ...
     $.getJSON("./json/categories.json", 
